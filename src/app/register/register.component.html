@@ -1,0 +1,29 @@
+<mat-toolbar >
+    <span>Registrarse</span>     
+</mat-toolbar>
+
+<mat-card>
+  
+  <mat-form-field class="example-full-width">
+      <input [(ngModel)]="usuario.email" id="email"  matInput placeholder="Digite Correo">
+    </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="usuario.paswword" id="paswword" matInput type="password" placeholder="Digite Contraseña" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="usuario.nombre" id="nombre" matInput placeholder="Digite Nombre" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input [(ngModel)]="usuario.telefono" id="telefono" matInput placeholder="Digite Telefono" >
+    </mat-form-field>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="register()">Agregar Contacto</button>
+    <span></span>
+    <button mat-raised-button color="warn" routerLink="/login">Volver</button>
+  </div>
+
+</mat-card>

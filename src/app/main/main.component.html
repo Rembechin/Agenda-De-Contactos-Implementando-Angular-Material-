@@ -1,0 +1,47 @@
+<mat-toolbar *ngIf="auth.user | async">
+    <span>Bienvenido</span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="appMenu">
+        <span class="nomUsu">{{ (auth.user | async)?.nombre }}</span>
+        <mat-icon>menu</mat-icon>
+    </button>       
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="salir()" class="btnSalir">Salir</button>
+</mat-menu>
+
+<mat-card>
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="usuario.nombre" id="nombre" matInput placeholder="Digite Nombre" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="usuario.email" id="email"  matInput placeholder="Digite Correo">
+  </mat-form-field>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="agregar()">Agregar Contacto</button>
+  </div>
+
+  <p></p>
+
+ 
+
+  <!-- Tabla De Contactos-->
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+    </tr>
+    <tr *ngFor="let contacto of (auth.user | async)?.contactos">
+      <td>{{ contacto.nombre }}</td>
+      <td>{{ contacto.email }}</td>
+      <td>
+        <button>Notificar</button>
+      </td>
+    </tr>
+  </table>
+
+</mat-card>

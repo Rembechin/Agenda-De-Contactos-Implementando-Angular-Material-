@@ -1,0 +1,19 @@
+.btnGuardar{
+    background: lawngreen;
+}
+.loginBox {
+    max-width:  90%;
+    width: 500px
+}
+.example-spacer{
+    flex: 1 1 auto;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}

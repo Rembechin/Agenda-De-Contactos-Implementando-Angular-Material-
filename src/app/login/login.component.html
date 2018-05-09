@@ -1,0 +1,26 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+    <div layout="column" class="loginBox md-whiteframe-z1" style="margin: 0 auto;">
+        
+          
+
+        <mat-card>
+            <mat-card-title>
+                <mat-toolbar class="primary" color="indigo">Iniciar Sesion</mat-toolbar>
+            </mat-card-title>
+                <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="user" id="email" matInput placeholder="Ingrese Correo" >
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="pass" id="paswword" type="password"  matInput placeholder="Ingrese Contraseña">
+                </mat-form-field>
+            
+                <div class="button-row">
+                  <button mat-raised-button class="btnGuardar" (click)="login()">Loguearse</button>
+                  <span class="example-spacer"></span>
+                  <button mat-raised-button color="primary" routerLink="/register">Registrarse</button>
+                </div>
+        </mat-card>
+
+    </div>
+</div>
